@@ -92,6 +92,11 @@ module.exports = {
             filename: 'successful.html',
             template: './src/html-templates/successful-template.html'
         }),
+        new HtmlWebpackPlugin({
+            title: 'CSS Grid',
+            filename: 'cssgrid.html',
+            template: './src/html-templates/cssgrid-template.html'
+        }),
         // Favicon
         new FaviconsWebpackPlugin({
             logo: './src/images/S-FaviconBackgroundColor@4x.png'
