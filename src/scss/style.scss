@@ -41,33 +41,22 @@ button {
     font-family: 'Inria Serif', serif;
 }
 
-.container {
-    flex: 1 0 auto;
-    margin: 1em;
+// .container {
+//     flex: 1 0 auto;
+//     margin: 1em;
+// }
+.grid {
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-gap: 2vw;
+    >article {
+        font-size: 2vw;
+        padding: .5em;
+        background: $fuego;
+        text-align: center;
+    }
 }
-
-
-/** WIP on the Flexbox */
-
-
-/**
-main {
-    display: flex;
-}
-
-article {
-    display: flex;
-}
-
-aside {
-    display: flex;
-}
-
-.footer {
-    flex-shrink: 0;
-    padding: 20px;
-}
-**/
 
 h1,
 h2,
