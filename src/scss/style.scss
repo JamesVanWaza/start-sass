@@ -1,11 +1,10 @@
 // /** SCSS Imports */
-// @import 'normalize';
-// @import 'algolia';
+@import 'normalize';
+@import 'algolia';
 // @import 'mediaqueries';
 // @import 'web-fonts';
 // @import 'colors';
 // @import 'buttons';
-// @import 'firebaseui';
 // /** Google Fonts */
 // @import url('https://fonts.googleapis.com/css?family=Inria+Serif|Quicksand&display=swap');
 // @include google-font {
@@ -294,3 +293,8 @@
 //         border-radius: 0;
 //     }
 // }
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+}
