@@ -52,7 +52,7 @@ const db = getFirestore(app);
 //const appCheck = initializeAppCheck(app);
 
 // Emulator
-connectAuthEmulator(auth, 'http://localhost:8080');
+//connectAuthEmulator(auth, 'http://localhost:8080');
 
 /** Constants */
 const profileForm = document.querySelector('#form');
