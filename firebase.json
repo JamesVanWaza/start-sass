@@ -25,7 +25,7 @@
         }
     ],
     "hosting": {
-        "target": "start-sass",
+        "target": "startsass",
         "public": "public",
         "ignore": [
             "firebase.json",
