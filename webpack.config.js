@@ -32,8 +32,15 @@ module.exports = {
     },
     module: {
         rules: [{
-            test: /\.txt$/,
-            use: 'raw-loader'
+            // Whenever a javascript file is found, babel should run and do not compile node_module files
+            test: /\js$/,
+            exclude: /(node_modules)/,
+            use: {
+                loader: 'babel-loader',
+                options: {
+                    presets: ['@babel/preset-env']
+                }
+            }
         },
         {
             test: /\.s[ac]ss$/i,
@@ -45,23 +52,20 @@ module.exports = {
                 { loader: 'css-loader' },
 
                 // Compiles Sass to CSS
-                { loader: 'sass-loader' }
-            ]
-        },
-        // Start here for the URL Loader
-        {
-            test: /\.(png|jpg)$/,
-            use: [
-                { loader: 'url-loader' }
+                { loader: 'sass-loader' },
             ]
         },
         {
-            test: /\.woff2?(\?v=[0-9]\.[0-9]\.[0-9]\.png|jpg)?$/,
-            use: 'url-loader?limit=10000',
+            test: /\.(png|svg|jpg|jpeg|gif)$/i,
+            type: 'asset/resource',
+        },
+        {
+            test: /\.(woff|woff2|eot|ttf|otf)$/i,
+            type: 'asset/resource',
         },
         {
             test: /\.(ttf|eot|svg)(\?[\s\S]+)?$/,
-            use: 'file-loader',
+            type: 'asset/resource',
         }
         ]
     },
@@ -69,6 +73,30 @@ module.exports = {
         // Favicon
         new FaviconsWebpackPlugin({
             logo: './src/images/S-FaviconBackgroundColor@4x.png'
-        })
+        }),
+        new HtmlWebpackPlugin({
+            filename: '404.html',
+            template: './src/html-templates/404-template.html'
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'auth.html',
+            template: './src/html-templates/auth-template.html'
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'index.html',
+            template: './src/html-templates/index-template.html'
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'signin.html',
+            template: './src/html-templates/signin-template.html'
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'signup.html',
+            template: './src/html-templates/signup-template.html'
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'successful.html',
+            template: './src/html-templates/successful-template.html'
+        }),
     ]
 };
