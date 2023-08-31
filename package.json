@@ -1,13 +1,13 @@
 {
     "name": "start-sass",
-    "version": "3.0.2",
+    "version": "3.0.3",
     "repository": {
         "type": "git",
         "url": "git+https://github.com/jamesvanwaza/start-sass.git"
     },
     "dependencies": {
         "@fortawesome/fontawesome-free": "^6.4.2",
-        "firebase": "^10.3.0"
+        "firebase": "^10.3.1"
     },
     "devDependencies": {
         "css-loader": "^6.8.1",

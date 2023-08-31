@@ -1,6 +1,6 @@
 {
     "name": "start-sass-functions",
-    "version": "1.1.1",
+    "version": "1.1.2",
     "description": "Cloud Functions for Firebase",
     "scripts": {
         "lint": "eslint",
@@ -17,7 +17,7 @@
         "firebase-functions": "^4.4.1"
     },
     "devDependencies": {
-        "eslint": "^8.47.0",
+        "eslint": "^8.48.0",
         "eslint-plugin-promise": "^6.1.1"
     },
     "private": true,
