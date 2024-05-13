@@ -61,50 +61,60 @@ const btn = document.querySelector('#submit');
 const readData = document.querySelector('#readData');
 const githubBtn = document.querySelector('#githubBtn');
 
-btn.addEventListener('click', (e) => {
-    e.preventDefault();
+if (btn) {
+    btn.addEventListener('click', (e) => {
+        e.preventDefault();
 
-    async function saveFormData() {
-        const docRef = await addDoc(collection(db, 'contactForm'), {
-            'First Name': fname.value, // As of Jan 10 2022, the data is being saved to firestore, but i have to declare the docRef variable - still an issue.
-            //createdAt: firebase.firestore.FieldValue.serverTimestamp()
-        }).then(() => {
-            console.log('Document written with ID: ', docRef.id);
-            profileForm.reset();
-        }).catch((error) => {
-            console.error('Error adding document: ', error);
-        });
-    }
+        async function saveFormData() {
+            const docRef = await addDoc(collection(db, 'contactForm'), {
+                'First Name': fname.value, // As of Jan 10 2022, the data is being saved to firestore, but i have to declare the docRef variable - still an issue.
+                //createdAt: firebase.firestore.FieldValue.serverTimestamp()
+            }).then(() => {
+                console.log('Document written with ID: ', docRef.id);
+                profileForm.reset();
+            }).catch((error) => {
+                console.error('Error adding document: ', error);
+            });
+        }
 
-    saveFormData();
-});
+        saveFormData();
+    });
+}
+
 
 // Read data from firestore
-readData.addEventListener('click', (e) => {
-    async function readFormData() {
-        const querySnapshot = await getDocs(collection(db, 'contactForm'));
 
-        querySnapshot.forEach((doc) => {
-            console.log(`${doc.id} => ${doc.data()}`);
-        });
-    }
+if (readData) {
+    readData.addEventListener('click', (e) => {
+        async function readFormData() {
+            const querySnapshot = await getDocs(collection(db, 'contactForm'));
 
-    readFormData();
-});
+            querySnapshot.forEach((doc) => {
+                console.log(`${doc.id} => ${doc.data()}`);
+            });
+        }
+
+        readFormData();
+    });
+}
+
 
 /** Setting up Auth */
 // Sign in with Github  
-githubBtn.addEventListener('click', (e) => {
-    e.preventDefault();
+if (githubBtn) {
+    githubBtn.addEventListener('click', (e) => {
+        e.preventDefault();
 
-    async function signInUser() {
-        // Sign in with Github
-        const provider = new GithubAuthProvider();
-        await signInWithRedirect(auth, provider);
-    }
+        async function signInUser() {
+            // Sign in with Github
+            const provider = new GithubAuthProvider();
+            await signInWithRedirect(auth, provider);
+        }
 
-    signInUser();
-});
+        signInUser();
+    });
+
+}
 
 // Auth state change
 function initAuthStateChange() {
