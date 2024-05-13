@@ -2,16 +2,8 @@ node_modules/
 yarn.lock
 .DS_Store
 mysqli-connect.php
-<<<<<<< HEAD
-public/
-.firebase/hosting.cHVibGlj.cache
-.firebaserc
-=======
-.firebase/hosting.cHVibGlj.cache
->>>>>>> 3d9452091b64715c2dc59869e19d79bdf83498d3
 firestore.indexes.json
 firestore.rules
 functions/.eslintrc.json
 storage.rules
-
 .github/workflows/.hosting.yml.icloud
