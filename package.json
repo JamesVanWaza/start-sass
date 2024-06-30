@@ -1,6 +1,6 @@
 {
     "name": "start-sass",
-    "version": "2024.4.4",
+    "version": "2024.4.5",
     "repository": {
         "type": "git",
         "url": "git+https://github.com/jamesvanwaza/start-sass.git"
@@ -20,7 +20,7 @@
         "sass": "1.77.6",
         "sass-loader": "^14.2.1",
         "style-loader": "^4.0.0",
-        "webpack": "^5.92.0",
+        "webpack": "^5.92.1",
         "webpack-cli": "^5.1.4",
         "webpack-dev-server": "^5.0.4"
     },
